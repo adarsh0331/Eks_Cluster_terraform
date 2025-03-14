@@ -75,7 +75,10 @@ pipeline {
             steps {
                 // Apply Terraform changes
                 echo 'Applying Terraform changes...'
-                sh 'terraform apply -auto-approve tfplan'
+                 sh '''
+                        cd eks-install
+                      terraform apply -auto-approve tfplan
+                    '''
             }
         }
 
