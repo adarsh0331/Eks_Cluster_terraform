@@ -1,9 +1,9 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-south-1"
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "cluster-terraform-eks-state-s3-bucket"
+  bucket = "cluster1-terraform-eks-state-s3-bucket"
 
   lifecycle {
     prevent_destroy = false
