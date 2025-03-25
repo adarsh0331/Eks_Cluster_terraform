@@ -79,19 +79,6 @@ pipeline {
             }
         }
 
-        stage('Terraform Destroy') {
-            steps {
-                input {
-                    message "Do you want to destroy the infrastructure?"
-                    ok "Destroy"
-                }
-                echo 'Destroying Terraform Infrastructure...'
-                sh '''
-                    cd eks-install
-                    terraform destroy -auto-approve
-                '''
-            }
-        }
 
     post {
         success {
